@@ -107,57 +107,71 @@
   font-weight: 900;
   font-style: italic;
 }
+
 /* Scrollable container */
 .scroll-container {
-    height: 300px; /* Example height */
-    overflow-y: auto; /* Enable vertical scrolling */
-    scrollbar-width: none; /* Firefox: hide scrollbar */
-    -ms-overflow-style: none; /* IE & Edge: hide scrollbar */
+  height: 300px;
+  /* Example height */
+  overflow-y: auto;
+  /* Enable vertical scrolling */
+  scrollbar-width: none;
+  /* Firefox: hide scrollbar */
+  -ms-overflow-style: none;
+  /* IE & Edge: hide scrollbar */
 
-    /* Smooth hover effect */
-    transition: all 0.3s ease;
+  /* Smooth hover effect */
+  transition: all 0.3s ease;
 }
 
 /* Hide scrollbar in WebKit (Chrome, Safari) */
 .scroll-container::-webkit-scrollbar {
-    width: 0;
+  width: 0;
 }
 
 /* Show scrollbar only on hover */
 .scroll-container:hover {
-    scrollbar-width: thin; /* Firefox: thin scrollbar */
-    scrollbar-color: #555 #222; /* Thumb color, track color */
+  scrollbar-width: thin;
+  /* Firefox: thin scrollbar */
+  scrollbar-color: #555 #222;
+  /* Thumb color, track color */
 }
 
 .scroll-container:hover::-webkit-scrollbar {
-    width: 8px; /* Show scrollbar width on hover */
+  width: 8px;
+  /* Show scrollbar width on hover */
 }
 
 .scroll-container:hover::-webkit-scrollbar-track {
-    background: #222; /* Track color */
+  background: #222;
+  /* Track color */
 }
 
 .scroll-container:hover::-webkit-scrollbar-thumb {
-    background-color: #555; /* Scrollbar thumb */
-    border-radius: 4px;
+  background-color: #555;
+  /* Scrollbar thumb */
+  border-radius: 4px;
 }
 
 .scroll-container:hover::-webkit-scrollbar-thumb:hover {
-    background-color: #888; /* Lighter on hover */
+  background-color: #888;
+  /* Lighter on hover */
 }
+
 /* Works for Chrome, Edge, Safari */
 ::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* Works for Firefox */
 html {
-    scrollbar-width: none; /* Hide scrollbar */
+  scrollbar-width: none;
+  /* Hide scrollbar */
 }
 
 /* Works for IE and old Edge */
 html {
-    -ms-overflow-style: none; /* Hide scrollbar */
+  -ms-overflow-style: none;
+  /* Hide scrollbar */
 }
 
 input.slider::-webkit-slider-runnable-track {
@@ -174,7 +188,8 @@ input.slider::-webkit-slider-thumb {
   height: 10px;
   background-color: white;
   border-radius: 50%;
-  margin-top: -3.5px; /* vertically center the thumb */
+  margin-top: -3.5px;
+  /* vertically center the thumb */
   position: relative;
   z-index: 10;
 }
@@ -207,4 +222,3 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 50%;
   background: white;
 }
-
