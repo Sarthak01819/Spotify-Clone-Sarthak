@@ -51,7 +51,7 @@ function playSong(index) {
 
 async function displayAlbums() {
     // console.log("Displaying albums...");
-    let a = await fetch(`/songs/`);
+    let a = await fetch(`./songs/`);
     let response = await a.text();
     let div = document.createElement('div');
     div.innerHTML = response;
@@ -70,7 +70,7 @@ async function displayAlbums() {
 
     for (const folder of folders) {
         try {
-            let res = await fetch(`/songs/${folder}/info.json`);
+            let res = await fetch(`./songs/${folder}/info.json`);
             if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
 
             let info = await res.json();
