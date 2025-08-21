@@ -61,7 +61,7 @@ async function displayAlbums() {
 
     // Create array of valid song folders
     let folders = Array.from(anchors)
-        .filter(e => e.href.includes("/songs/") && !e.href.endsWith('/songs/'))
+        .filter(e => e.href.includes("/songs/") && !e.href.endsWith('/songs/') && !e.href.includes(".htaccess"))
         .map(e => {
             let url = new URL(e.href);
             return url.pathname.split('/').filter(part => part)[1];
