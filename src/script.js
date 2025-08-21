@@ -13,7 +13,7 @@ async function getSongs(folder) {
     }
 
     const encodedFolder = encodeURIComponent(folder);
-    const response = await fetch(`http://127.0.0.1:5500/songs/${encodedFolder}/`);
+    const response = await fetch(`/songs/${encodedFolder}/`);
 
     if (!response.ok) {
         throw new Error(`Failed to fetch songs from ${folder}`);
@@ -51,7 +51,7 @@ function playSong(index) {
 
 async function displayAlbums() {
     // console.log("Displaying albums...");
-    let a = await fetch(`http://127.0.0.1:5500/songs/`);
+    let a = await fetch(`/songs/`);
     let response = await a.text();
     let div = document.createElement('div');
     div.innerHTML = response;
@@ -70,7 +70,7 @@ async function displayAlbums() {
 
     for (const folder of folders) {
         try {
-            let res = await fetch(`http://127.0.0.1:5500/songs/${folder}/info.json`);
+            let res = await fetch(`/songs/${folder}/info.json`);
             if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
 
             let info = await res.json();
