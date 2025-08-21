@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./src/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Spotify-Clone</title>
+</head>
+
+<body class="bg-black text-white poppins-regular p-0 m-0 scroll-container">
+
+    <!-- Nav for pc starts here -->
+    <nav class="hidden xl:flex items-center justify-between h-[64px] ">
+        <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2 justify-between pl-5">
+                <div class="h-[72px] w-[72px] flex justify-center items-center">
+                    <img class=" h-[32px] w-[32px] hover:h-[34px] hover:w-[34px] cursor-pointer" src="assets/spotify.png" alt="Spotify Logo">
+                </div>
+                <div
+                    class="flex justify-center pb-0.5 cursor-pointer items-center bg-[#1f1f1f] rounded-full h-[48px] w-[48px] ml-[8px] transition-all hover:h-[50px] hover:w-[50px]">
+                    <img class="h-[20px] w-[20px] hover:h-[22px] hover:w-[22px]" src="assets/home.png" alt="Home">
+                </div>
+            </div>
+
+            <!-- Search bar -->
+            <div class="flex items-center gap-2 absolute left-[165px]">
+                <div
+                    class="bg-[#1f1f1f] text-white rounded-full h-[48px] w-[455px] px-4 flex items-center gap-2 hover:outline hover:bg-[#292929] relative">
+                    <img class="h-[26px]" src="assets/search.png" alt="Search">
+                    <div class="flex items-center justify-between w-full">
+                        <input class="focus:outline-none w-[350px] h-100% placeholder-[#aaaeb3] text-[16px]" type="text"
+                            placeholder="What do you want to play?">
+                        <div class="flex items-center justify-items-right gap-1">
+                            <span class="text-[30px] text-[#7c7c7c] font-extralight">|</span>
+                            <img class="h-[30px]" src="assets/music-library.png" alt="Music Library">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Search bar ends here -->
+        </div>
+        <div class=" flex items-center gap-1 pr-5 text-[#b3b3b3] font-bold">
+            <ul class="flex items-center gap-2 text-[15px]">
+                <li class="cursor-pointer">Premium</li>
+                <li class="cursor-pointer">Support</li>
+                <li class="cursor-pointer">Download</li>
+            </ul>
+            <img class="h-[28px]" src="assets/line.png" alt="line">
+            <div class="flex items-center gap-2 pl-4 pr-8 text-[12px] font-bold">
+                <img class="h-[20px] cursor-pointer" src="assets/down-arrow.png" alt="Download Arrow">
+                <span class="cursor-pointer">Install App</span>
+            </div>
+            <span class="text-[13.5px]  mr-28 cursor-pointer">Sign up</span>
+            <div
+                class="px-2 w-[108px] h-[48px] bg-white absolute right-2 text-black flex rounded-full items-center justify-center font-bold cursor-pointer transition-all hover:w-[110px] hover:h-[50px] hover:bg-[#ececec]">
+                <span>Log in</span>
+            </div>
+        </div>
+
+    </nav>
+    <!-- Nav for pc ends here -->
+    <!-- Nav for mobile starts here -->
+    <nav class="flex xl:hidden bg-black justify-between z-10 items-center h-[72px]">
+        <div class="flex items-center gap-2 px-4">
+            <span class="text-xl font-semibold text-white">Spotify</span>
+            <img src="assets/spotify.png" alt="Spotify Logo" class="h-[32px]">
+        </div>
+        <div class="flex items-center">
+            <img id="menu-icon" src="assets/menus.png" alt="Menu" class="h-[24px]">
+            <button class="px-4" onclick="toggleSidebar()">
+            </button>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <!-- <div id="nav-dialog"
+        class="fixed top-0 left-0 h-full w-72 xl:hidden bg-black text-white shadow-lg transform -translate-x-full transition-transform duration-300 z-50">
+        <div class="flex justify-between items-center px-4 py-4 border-b border-white">
+            <span class="text-lg font-semibold">Your Library</span>
+        </div> -->
+    <!-- Sidebar Content -->
+    <!-- <ul class="p-4 space-y-2 text-sm overflow-y-auto max-h-[calc(100vh-100px)]"> -->
+    <!-- Songs list will be displayed here -->
+    <!-- <div id="songlist-m" class="overflow-y-scroll h-[50%] px-4 xl:hidden flex w-auto">
+                <ul class="pl-2"></ul>
+            </div>
+        </ul>
+    </div> -->
+
+    <!-- Backdrop -->
+    <div id="backdrop" class="fixed inset-0  hidden z-0" onclick="toggleSidebar()"></div>
+
+    <!-- Main content starts here -->
+    <div class="flex w-100vw px-2 h-[78vh] gap-2 right-0 relative">
+        <div id="LEFT" class="h-full w-[70vw] z-30 sm:w-[50vw] xl:w-[25vw] bg-[#121212] 
+           absolute xl:relative xl:left-0 left-[-100%] 
+           rounded-xl flex-wrap flex-col transition-all duration-300">
+
+            <div class="flex items-center justify-between pb-4 px-4 pt-5.5">
+                <span class="text-xl font-bold">Your Library</span>
+                <!-- <span class="text-2xl font-extralight">+</span> -->
+            </div>
+
+            <!-- Songs list will be displayed here -->
+            <div id="songslist" class="overflow-y-scroll h-[50%] px-4 flex ">
+                <ul class="w-full"></ul>
+            </div>
+            <!-- Songs list ends here -->
+
+            <div class="flex flex-col items-start px-4 m-2 mb-6 bottom-12 absolute">
+                <div class="flex flex-wrap xl:w-[23vw] w-full gap-4 text-[10px] py-4 text-[#b3b3b3]">
+                    <span class="cursor-pointer"><a href="https://www.spotify.com/in-en/legal/end-user-agreement/">Legal</a></span>
+                    <span class="cursor-pointer">Safety & Privacy Center</span>
+                    <span class="cursor-pointer">Privacy Policy</span>
+                    <span class="cursor-pointer">Cookies</span>
+                </div>
+                <div class="flex gap-4 pb-4 text-[10px] text-[#b3b3b3]">
+                    <span class="cursor-pointer">About Ads</span>
+                    <span class="cursor-pointer">Accessibility</span>
+                </div>
+                <a class="text-[11px] hover:underline" href="#">Cookies</a>
+            </div>
+
+            <div class="flex items-center justify-between px-6 pb-4 bottom-0 absolute">
+                <div
+                    class="flex items-center justify-center h-[32px] w-[100px] rounded-full border-[1px] border-white cursor-pointer gap-2">
+                    <img class="h-[16px] w-auto" src="assets/website.png" alt="Languages">
+                    <span class="text-[13px] font-bold">English</span>
+                </div>
+            </div>
+        </div>
+        <div id="RIGHT" class="h-full xl:w-[75vw] w-[100vw] bg-[#121212] z-10 rounded-xl pl-1 overflow-y-scroll">
+            <div class="flex items-center justify-between px-6 pb-6 pt-10">
+                <span class="text-3xl font-bold">Spotify Playlist</span>
+                <span class="text-[13px] text-[#b3b3b3] cursor-pointer hover:underline">See all</span>
+            </div>
+            <!-- Album cards container -->
+            <div class="cardContainer flex flex-wrap items-start gap-4 px-4 pb-4">
+                <!-- Cards will be inserted here by JavaScript -->
+
+            </div>
+        </div>
+    </div>
+    <!-- Main content ends here -->
+
+    <!-- Playbar starts here -->
+    <div class="fixed w-full flex-row sm:flex sm:justify-between items-center bottom-0 bg-black justify-items-center px-6 pt-2">
+        <div class="flex justify-start sm:w-auto w-full gap-4">
+            <img class="h-[50px] w-[50px] rounded-xl cursor-pointer" src="assets/Aavan-Jaavan.jpeg" alt="Current Song">
+            <div class="flex flex-col items-start">
+                <span id="songinfo" class="cursor-pointer hover:underline font-medium text-[13px]"></span>
+                <span class="text-[#b3b3b3] cursor-pointer hover:underline text-[12px]">Sarthak</span>
+            </div>
+        </div>
+        <div class="flex flex-col items-center gap-2 pt-2">
+            <div class="flex flex-row gap-8 items-center justify-between">
+                <img id="prev" class="h-[20px] cursor-pointer" src="assets/previous.png" alt="Previous Button">
+                <div class="flex items-center justify-center h-[32px] w-[32px] bg-white rounded-full cursor-pointer">
+                    <img id="play" class="h-[15px] w-auto" src="assets/play-button.png" alt="Play Button">
+                </div>
+                <img id="next" class="h-[20px] cursor-pointer" src="assets/next.png" alt="Next Button">
+            </div>
+            <div class="flex items-center justify-between pb-4">
+                <input type="range"
+                    class="sm:w-[35vw] w-[70vw] h-[3px] rounded-full cursor-pointer appearance-none bg-transparent slider" value="0"
+                    min="0" max="100">
+                <span id="songtime" class="text-[12px] ml-2"></span>
+            </div>
+        </div>
+        <!-- Volume Control -->
+        <div class="sm:flex hidden items-center gap-2 mt-2">
+            <img id="volBtn" class="h-[18px] cursor-pointer" src="assets/volume-up.png" alt="Volume">
+            <input id="volume" type="range" min="0" max="1" step="0.01" value="1"
+                class="w-[100px] h-[3px] bg-white rounded-full cursor-pointer appearance-none">
+        </div>
+    </div>
+    <!-- Playbar ends here -->
+
+    <!-- Playbar for mobile -->
+    <!-- <div class="xl:hidden w-full bg-black rounded-t-xl relative">
+        <div class="relative w-full items-center flex bg-black justify-between px-6 pt-2 pb-6">
+            <div class="flex flex-wrap items-center gap-2">
+                <img class="h-[50px] w-[50px] rounded-[10px]" src="assets/Aavan-Jaavan.jpeg" alt="Song image">
+                <div class="flex flex-col items-start">
+                    <span id="msonginfo"
+                        class="hover:underline text-[15px] flex-wrap font-semibold cursor-pointer"></span>
+                    <span class="hover:underline text-[12px] cursor-pointer">Artist Name</span>
+                </div>
+            </div>
+            <div class="flex flex-row gap-4 items-center justify-between">
+                <img id="prev-m" class="h-[20px] w-auto cursor-pointer" src="assets/previous.png" alt="Previous Button">
+                <div class="flex items-center justify-center h-[35px] w-[35px] bg-white rounded-full cursor-pointer">
+                    <img id="play-m" class="h-[15px] w-auto" src="assets/play-button.png" alt="Play Button">
+                </div>
+                <img id="next-m" class="h-[20px] w-auto cursor-pointer" src="assets/next.png" alt="Next Button">
+            </div>
+        </div>
+        <div class="xl:hidden flex items-center flex-col bg-white h-[3px] bottom-0.5 absolute w-full">
+            <input type="range" class="w-[100%] h-[0px] rounded-full cursor-pointer appearance-none bottom-0 slides"
+                value="0" min="0" max="100">
+            <span id="songtime-m" class="text-[12px] ml-2"></span>
+        </div>
+    </div> -->
+
+    <!-- Scripts should be at the end of body -->
+    <script src="src/script.js"></script>
+    <!-- <script src="src/temp.js"></script> -->
+</body>
+
+</html>

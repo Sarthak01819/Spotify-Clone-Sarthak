@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+/* Scrollable container */
+.scroll-container {
+    height: 300px; /* Example height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    scrollbar-width: none; /* Firefox: hide scrollbar */
+    -ms-overflow-style: none; /* IE & Edge: hide scrollbar */
+
+    /* Smooth hover effect */
+    transition: all 0.3s ease;
+}
+
+/* Hide scrollbar in WebKit (Chrome, Safari) */
+.scroll-container::-webkit-scrollbar {
+    width: 0;
+}
+
+/* Show scrollbar only on hover */
+.scroll-container:hover {
+    scrollbar-width: thin; /* Firefox: thin scrollbar */
+    scrollbar-color: #555 #222; /* Thumb color, track color */
+}
+
+.scroll-container:hover::-webkit-scrollbar {
+    width: 8px; /* Show scrollbar width on hover */
+}
+
+.scroll-container:hover::-webkit-scrollbar-track {
+    background: #222; /* Track color */
+}
+
+.scroll-container:hover::-webkit-scrollbar-thumb {
+    background-color: #555; /* Scrollbar thumb */
+    border-radius: 4px;
+}
+
+.scroll-container:hover::-webkit-scrollbar-thumb:hover {
+    background-color: #888; /* Lighter on hover */
+}
+/* Works for Chrome, Edge, Safari */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Works for Firefox */
+html {
+    scrollbar-width: none; /* Hide scrollbar */
+}
+
+/* Works for IE and old Edge */
+html {
+    -ms-overflow-style: none; /* Hide scrollbar */
+}
+
+input.slider::-webkit-slider-runnable-track {
+  height: 3px;
+  background: linear-gradient(to right, white 0%, gray 0%);
+  border-radius: 9999px;
+}
+
+/* Moving thumb/dot */
+input.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  margin-top: -3.5px; /* vertically center the thumb */
+  position: relative;
+  z-index: 10;
+}
+
+/* For Firefox */
+input.slider::-moz-range-track {
+  height: 3px;
+  background: white;
+  border-radius: 9999px;
+}
+
+input.slider::-moz-range-progress {
+  height: 3px;
+  background: white;
+  border-radius: 9999px;
+}
+
+input.slider::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  border: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: white;
+}
+
